@@ -8,12 +8,20 @@
 
 int main(void)
 {
-	int car;
+	char digits[] = "0123456789abcdef";
 
-	for (car = 'z'; car >= 'a'; car--)
+	for (int i = 0; i < 10; ++i)
 	{
-		putchar(car);
+		putchar(digits[i]);
+		putchar('\n');
 	}
-	putchar('\n');
+
+	for (int i = 0; i < 16; ++i)
+	{
+		putchar('0');
+		putchar(digits[i]);
+		putchar('\n');
+		}
+
 	return (0);
 }
