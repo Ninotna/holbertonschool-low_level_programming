@@ -12,13 +12,11 @@ int main(void)
 
 	for (car = 'a'; car <= 'z'; car++)
 	{
+		if (car != 'q' || car != 'e')
 		{
-			while (car != 'q' || car != 'e')
-			{
-				putchar(car);
-			}
+			putchar(car);
 		}
 	}
-		putchar('\n');
-		return (0);
+	putchar('\n');
+	return (0);
 }
