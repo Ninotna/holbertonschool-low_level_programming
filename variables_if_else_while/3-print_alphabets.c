@@ -14,7 +14,6 @@ int main(void)
 	{
 	putchar(car);
 	}
-	putchar('\n');
 	for (car = 'A'; car <= 'Z'; car++)
 	{
 		putchar(car);
