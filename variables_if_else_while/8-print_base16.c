@@ -13,7 +13,7 @@ int main(void)
 
 	for (i = 0; i < 16; ++i)
 	{
-		(i > 9 && i <= 16) ? putchar('0' + digits[i]) : putchar(digits[i]);
+		(i > 9) ? putchar('0' + digits[i]) : putchar(digits[i]);
 	}
 	putchar('\n');
 	return (0);
