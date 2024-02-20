@@ -13,7 +13,7 @@ int main(void)
 	for (car = 'a'; car <= 'z'; car++)
 	{
 		{
-			while(car != 'q' || car != 'e')
+			while (car != 'q' || car != 'e')
 			{
 				putchar(car);
 			}
