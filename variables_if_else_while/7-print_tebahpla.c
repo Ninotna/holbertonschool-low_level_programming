@@ -10,7 +10,7 @@ int main(void)
 {
 	int car;
 
-	for (car = 'z'; car > 'a'; car--)
+	for (car = 'z'; car >= 'a'; car--)
 	{
 		putchar(car);
 	}
