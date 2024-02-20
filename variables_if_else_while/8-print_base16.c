@@ -13,14 +13,11 @@ int main(void)
 
 	for (i = 0; i < 10; ++i)
 	{
+		if (i > 9 && i < 16)
+		{
+			putchar('0');
+		}
 		putchar(digits[i]);
 	}
-
-	for (i = 0; i < 16; ++i)
-	{
-		putchar('0');
-		putchar(digits[i]);
-		}
-
 	return (0);
 }
