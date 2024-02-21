@@ -1,18 +1,4 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-/* Prototype de la fonction _putchar */
-int _putchar(char c);
-
-/* Prototypes des autres fonctions */
-int function1(int arg1, char arg2);
-void function2(void);
-double function3(double arg1, double arg2);
-
-/* Ajoutez d'autres prototypes de fonctions ici */
-
-#endif /* MAIN_H */
-
+#include <main.h>
 /**
  * main -  prints _putchar, followed by a new line
  * Return: Always 0 (Success)
