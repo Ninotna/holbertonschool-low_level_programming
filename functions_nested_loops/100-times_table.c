@@ -17,6 +17,11 @@ void print_times_table(int n)
 			{
 				int product = row * col;
 
+				if (col != 0)
+				{
+					_putchar(','); /* Pour aligner les produits à 1 et 2 chiffres */
+					_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
+				}
 				if (product >= 100)
 				{
 					_putchar(product / 100 + '0'); /* Affiche le chiffre des centaines */
@@ -25,19 +30,12 @@ void print_times_table(int n)
 				}
 				else if (product >= 10 && product < 100)
 				{
+					_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
 					_putchar(product / 10 + '0'); /* Affiche le chiffre des dizaines */
 					_putchar(product % 10 + '0'); /* Affiche le chiffre des unités */
-					_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
 				}
 				else
 				{
-					if (col != 0)
-					{
-						_putchar(','); /* Pour aligner les produits à 1 et 2 chiffres */
-						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
-						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
-						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
-					}
 					_putchar(product + '0');
 				}
 			}
