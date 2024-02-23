@@ -3,7 +3,7 @@
  * add - function that adds two integers and returns the result.
  * @a : integer
  * @b : b
- * Return: a+b
+ * Return: 0
  */
 int add(int a, int b)
 {
@@ -20,5 +20,5 @@ int add(int a, int b)
 		}
 
 	_putchar('\n');
-	return (addi);
+	return (0);
 }
