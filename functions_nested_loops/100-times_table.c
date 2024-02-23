@@ -36,6 +36,7 @@ void print_times_table(int n)
 						_putchar(','); /* Pour aligner les produits à 1 et 2 chiffres */
 						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
 						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
+						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
 					}
 					_putchar(product + '0');
 				}
