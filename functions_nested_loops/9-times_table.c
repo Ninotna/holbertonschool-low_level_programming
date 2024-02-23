@@ -19,7 +19,10 @@ for (row = 0; row <= 9; row++)
 			_putchar(product % 10 + '0'); /* Affiche le chiffre des unités */
 		} else
 		{
-			_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
+			if (col != 0)
+			{
+				_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
+			}
 			_putchar(product + '0');
 		}
 		/* Espacer les colonnes avec ', ' */
