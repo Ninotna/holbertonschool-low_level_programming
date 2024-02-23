@@ -27,6 +27,7 @@ void print_times_table(int n)
 					if (col != 0)
 					{
 						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
+						_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
 					}
 					_putchar(product + '0');
 				}
