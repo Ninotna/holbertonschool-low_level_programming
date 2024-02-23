@@ -15,20 +15,20 @@ for (row = 0; row <= 9; row++)
 /* Vérifier si le produit a un ou deux chiffres */
 		if (product >= 10)
 		{
-			putchar(product / 10 + '0'); /* Affiche le chiffre des dizaines */
-			putchar(product % 10 + '0'); /* Affiche le chiffre des unités */
+			_putchar(product / 10 + '0'); /* Affiche le chiffre des dizaines */
+			_putchar(product % 10 + '0'); /* Affiche le chiffre des unités */
 		} else
 		{
-			putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
-			putchar(product + '0');
+			_putchar(' '); /* Pour aligner les produits à 1 et 2 chiffres */
+			_putchar(product + '0');
 		}
 		/* Espacer les colonnes avec ', ' */
 		if (col < 9)
 		{ /* pas de  ', ' après le dernier de la ligne */
-			putchar(',');
-			putchar(' ');
+			_putchar(',');
+			_putchar(' ');
 		}
 	}
-	putchar('\n');
+	_putchar('\n');
 }
 }
