@@ -23,8 +23,8 @@ void print_to_98(int n)
 		for (n = n; n > 98 ; n--)
 		{
 			printf("%d, ", n);
-			printf("%d", 98);
 		}
+			printf("%d", 98);
 	}
 		putchar('\n');
 }
