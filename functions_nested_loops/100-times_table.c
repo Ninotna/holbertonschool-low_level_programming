@@ -17,7 +17,13 @@ void print_times_table(int n)
 			{
 				int product = row * col;
 				/* Vérifier si le produit a un ou deux chiffres */
-				if (product >= 10)
+				if (product >= 100)
+				{
+					_putchar(product / 100 + '0'); /* Affiche le chiffre des centaines */
+					_putchar(product / 10 + '0'); /* Affiche le chiffre des dizaines */
+					_putchar(product % 10 + '0'); /* Affiche le chiffre des unités */
+				}
+				if (product >= 10 && product < 100)
 				{
 					_putchar(product / 10 + '0'); /* Affiche le chiffre des dizaines */
 					_putchar(product % 10 + '0'); /* Affiche le chiffre des unités */
