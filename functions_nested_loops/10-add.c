@@ -7,18 +7,19 @@
  */
 int add(int a, int b)
 {
-	int addi = a + b;
+	int addi = a + b
+	int res;
 
 		if (addi >= 10)
 		{
-			_putchar(addi / 10 + '0'); /* Affiche le chiffre des dizaines */
-			_putchar(addi % 10 + '0'); /* Affiche le chiffre des unités */
+			res = _putchar(addi / 10 + '0'); /* Affiche le chiffre des dizaines */
+			res += _putchar(addi % 10 + '0'); /* Affiche le chiffre des unités */
 		}
 		else
 		{
-			_putchar(addi + '0');
+			res = _putchar(addi + '0');
 		}
 
 	_putchar('\n');
-	return (0);
+	return (res);
 }
