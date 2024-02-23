@@ -21,5 +21,5 @@ int add(int a, int b)
 		}
 
 	_putchar('\n');
-	return ('');
+	return ();
 }
