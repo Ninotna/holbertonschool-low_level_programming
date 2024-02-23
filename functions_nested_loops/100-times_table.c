@@ -20,7 +20,7 @@ void print_times_table(int n)
 				if (product >= 100)
 				{
 					_putchar(product / 100 + '0'); /* Affiche le chiffre des centaines */
-					_putchar(product / 10 + '0'); /* Affiche le chiffre des dizaines */
+					_putchar((product / 10) % 10 + '0'); /* Affiche le chiffre des dizaines */
 					_putchar(product % 10 + '0'); /* Affiche le chiffre des unités */
 				}
 				else if (product >= 10 && product < 100)
