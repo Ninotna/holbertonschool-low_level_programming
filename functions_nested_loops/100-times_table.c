@@ -15,7 +15,7 @@ void print_times_table(int n)
 		{
 			for (col = 0; col <= n; col++)
 			{
-				product = row * col;
+				product = (row * col);
 				if (col != 0)
 				{
 					_putchar(','); /* Pour aligner les produits à 1 et 2 chiffres */
