@@ -7,7 +7,7 @@
  */
 int add(int a, int b)
 {
-	int addi = a + b
+	int addi = a + b;
 	int res;
 
 		if (addi >= 10)
