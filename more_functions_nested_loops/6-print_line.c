@@ -7,12 +7,12 @@
 
 void print_line(int n)
 {
-	int i;
+	int n;
 
-	while (i > 0)
+	while (n > 0)
 	{
 		_putchar(95 + '0');
-		(i <= 0) ? _putchar('\n') : i--;
+		(n<= 0) ? _putchar('\n') : n--;
 	}
 
 }
