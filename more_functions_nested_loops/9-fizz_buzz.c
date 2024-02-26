@@ -1,11 +1,13 @@
 #include <stdio.h>
 /**
- * Fizz Buzz test - function that prints a square, followed by a new line.
+ * fizz_buzz - function that prints a square, followed by a new line.
  * Return: print square
  */
 
 void fizz_buzz(void)
 {
+	int i;
+
 	for (i = 0; i <= 100; ++)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
