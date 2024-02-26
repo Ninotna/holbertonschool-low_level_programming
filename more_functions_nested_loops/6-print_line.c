@@ -7,7 +7,7 @@
 
 void print_line(int n)
 {
-	while (n > 0)
+	while (n >= 0)
 	{
 		_putchar(95 + '0');
 		(n <= 0) ? _putchar('\n') : n--;
