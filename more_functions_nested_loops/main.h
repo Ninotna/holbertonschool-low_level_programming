@@ -18,3 +18,5 @@ void print_square(int size);
 
 int _putchar(int c);
 
+void fizzbuzz(void);
+
