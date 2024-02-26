@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
- * fizzbuzz - function that prints a square, followed by a new line.
- * Return: print square
+ * main - program that prints the numbers from 1 to 100
+ * Return: Fuzzybuzz test
  */
 
-void fizzbuzz(void)
+void main(void)
 {
 	int i;
 
