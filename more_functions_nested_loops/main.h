@@ -20,3 +20,5 @@ int _putchar(int c);
 
 void fizzbuzz(void);
 
+void print_triangle(int size);
+
