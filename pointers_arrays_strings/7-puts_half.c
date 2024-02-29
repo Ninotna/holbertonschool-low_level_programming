@@ -8,18 +8,22 @@
  * Return: a string
  */
 
-void puts_half(char *str)
+void puts_half(char str[])
 {
-	int i = 0;
-	int len = _strlen(str) - 1;
+	int length = 0;
 
-	while (str[i] != '\0')
+	while (str[length] != '\0')
 	{
-		if (i > len / 2)
-		{
-			_putchar(str[i]);
-		}
-		i++;
+		length++;
 	}
+
+	int start_index = (length + 1) / 2;
+
+	while (str[start_index] != '\0')
+	{
+		_putchar(str[start_index]);
+		start_index++;
+	}
+
 	_putchar('\n');
 }
