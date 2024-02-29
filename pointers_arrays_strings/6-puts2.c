@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * print_rev - function that prints every other character of a string, starting with the 1st character.
- * @s: pointer to the character array.
+ * puts2 - function prints every character (str), starting with the 1st
+ * @str: pointer to the character array.
  * Return: a string
  */
 
@@ -13,7 +13,6 @@ void puts2(char *str)
 
 	while (str[i] != '\0')
 	{
-		
 		_putchar(str[i]);
 		i++;
 	}
