@@ -5,19 +5,21 @@
  * _strcat - function that concatenates two strings.
  * @dest: pointer to the dest str
  * @src: pointer to the src str
- * @n: max str length
  * Return: S1
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strcat(char *dest, char *src)
 {
-	int i = 0;
+	int i, j;
 
-while (i <= n)
-{
-	dest[i] = src[i];
-	i++;
-}
+	i = 0;
+	for (j = 0; dest[j] != '\0'; j++)
+	;
 
-return (dest);
+	while (src[i] != '\0')
+	{
+		dest[j + i] = src[i];
+		i++;
+	}
+	return (dest);
 }
