@@ -23,7 +23,7 @@ char *create_array(unsigned int size, char c)
 	}
 
     for ( i = 0; i < size; i++) {
-        a[i] = c; // Initialize the array with the character c
+        a[i] = c;
     }
 
 	return (a);
