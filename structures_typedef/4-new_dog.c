@@ -42,7 +42,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 				mydog->name[i] = name[i];
 			}
 
-	mydog->name[i] = '\0'; // Null-terminate the string
+	mydog->name[i] = '\0'; /* Null-terminate the string */
 
     /* Set age */
 	mydog->age = age;
