@@ -60,7 +60,7 @@ dog_t *new_dog(char *name, float age, char *owner)
         mydog->owner[i] = owner[i];
     }
 
-    mydog->owner[i] = '\0'; // Null-terminate the string
+    mydog->owner[i] = '\0';
 
     return (mydog);
 }
