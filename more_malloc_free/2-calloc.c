@@ -12,15 +12,27 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *p;
-	unsigned int i;
+	char *p;
 
+	unsigned int i, total_size;
+
+	/* Check for zero nmemb or size */
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	p = malloc(size * nmemb);
+
+	/* Calculate total allocation size */
+	total_size = size * nmemb;
+
+	/* Allocate memory */
+	p = malloc(total_size);
 	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < nmemb ; i++)
+
+	/* Initialize allocated memory to zero */
+	for (i = 0; i < total_size; i++)
+	{
 		p[i] = 0;
-	return (p);
+	}
+
+	return ((void *)p);
 }
