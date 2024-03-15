@@ -13,37 +13,54 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+    int name_len, owner_len, i;
+    dog_t *mydog;
 
-int name_len, owner_len, i;
-dog_t *mydog;
+    /* Initialize variables */
+    name_len = owner_len = 0;
 
-name_len = owner_len = 0;
+    /* Calculate lengths of name and owner */
+    while (name[name_len])
+        name_len++;
+    while (owner[owner_len])
+        owner_len++;
 
-while (name[name_len++])
-;
-while (owner[owner_len++])
-;
+    /* Allocate memory for the dog structure */
+    mydog = (dog_t *)malloc(sizeof(dog_t));
+    if (mydog == NULL)
+        return (NULL);
 
-mydog = malloc(sizeof(dog_t));
+    /* Allocate and copy name */
+    mydog->name = (char *)malloc((name_len + 1) * sizeof(char));
+    if (mydog->name == NULL)
+    {
+        free(mydog); /* Free allocated memory for the structure */
+        return (NULL);
+    }
+		for (i = 0; i < name_len; i++) 
+			{
+				mydog->name[i] = name[i];
+			}
 
-if (mydog == NULL)
-{
-	return (NULL);
-}
+	mydog->name[i] = '\0'; // Null-terminate the string
 
-mydog->name = malloc(name_len *sizeof(mydog->name));
-	if (mydog == NULL)
-		return (NULL);
-	for (i = 0; i < name_len; i++)
-		mydog->name[i] = name[i];
+    /* Set age */
+	mydog->age = age;
 
-		mydog->age = age;
+    /* Allocate and copy owner */
+    mydog->owner = (char *)malloc((owner_len + 1) * sizeof(char));
+    if (mydog->owner == NULL)
+    {
+        free(mydog->name); /* Free allocated memory for name */
+        free(mydog);       /* Free allocated memory for the structure */
+        return (NULL);
+    }
+    for (i = 0; i < owner_len; i++) 
+	{
+        mydog->owner[i] = owner[i];
+    }
 
-mydog->owner = malloc(owner_len * sizeof(mydog->owner));
-	if (mydog == NULL)
-		return (NULL);
-	for (i = 0; i < owner_len; i++)
-		mydog->owner[i] = owner[i];
+    mydog->owner[i] = '\0'; // Null-terminate the string
 
-		return (mydog);
+    return (mydog);
 }
