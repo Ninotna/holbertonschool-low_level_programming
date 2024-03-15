@@ -12,19 +12,23 @@
 
 int *array_range(int min, int max)
 {
+	int buffer_s;
 
-int buffer_s;
-int *p;
+	int *p;
 
-for (buffer_s = 0; buffer_s < max; buffer_s++)
-;
+	buffer_s = min > max ? 0 : max - min + 1;
+	p = buffer_s > 0 ? malloc(buffer_s * sizeof(int)) : NULL;
 
-p = malloc(buffer_s * sizeof(char));
+	if (p == NULL)
+	{
+		return (NULL);
+	}
 
-if (min > max || p == NULL)
-{
-	return (NULL);
-}
+	for (int i = 0; i < buffer_s; i++)
 
-return (p);
+	{
+		p[i] = min + i;
+	}
+
+	return (p);
 }
