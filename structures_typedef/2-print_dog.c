@@ -4,8 +4,8 @@
 #include "main.h"
 
 /**
-  * print_dog - initialize struct dog.
-  * @d: struct name
+  * print_dog - prints the dog struct
+  * @d: pointer to the dog struct
   */
 
 void print_dog(struct dog *d)
