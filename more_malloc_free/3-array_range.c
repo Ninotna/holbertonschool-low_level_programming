@@ -10,22 +10,23 @@
 * Return: 0 || 1
 */
 
+#include <stdlib.h> /* For malloc */
+
 int *array_range(int min, int max)
 {
-	int buffer_s;
+	int buffer_s, i;
 
 	int *p;
 
 	buffer_s = min > max ? 0 : max - min + 1;
-	p = buffer_s > 0 ? malloc(buffer_s * sizeof(int)) : NULL;
+	p = buffer_s > 0 ? (int *)malloc(buffer_s * sizeof(int)) : NULL;
 
 	if (p == NULL)
 	{
 		return (NULL);
 	}
 
-	for (int i = 0; i < buffer_s; i++)
-
+	for (i = 0; i < buffer_s; i++)
 	{
 		p[i] = min + i;
 	}
