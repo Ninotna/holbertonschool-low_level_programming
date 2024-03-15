@@ -11,26 +11,52 @@
 *Return: pointer to the alloc memory
 */
 
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n) 
 {
-	char *p;
-	unsigned int s1count, s2count, sizeBuffer, i;
+    char *p;
+    unsigned int s1count, s2count, sizeBuffer, i;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	for (s1count = 0; s1[s1count]; s1count++)
-		;
-	for (s2count = 0; s2[s2count]; s2count++)
-		;
-	s2count > n ? (s2count = n) : (n = s2count);
-	sizeBuffer = s1count + s2count + 1;
-	p = malloc(sizeBuffer * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	for (i = 0; i < sizeBuffer - 1; i++)
-		i < s1count ? (p[i] = s1[i]) : (p[i] = s2[i - s1count]);
-	p[sizeBuffer] = '\0';
-	return (p);
+    // Use empty strings if NULL pointers are provided
+    if (s1 == NULL)
+        s1 = "";
+    if (s2 == NULL)
+        s2 = "";
+
+    // Count the length of s1
+    for (s1count = 0; s1[s1count]; s1count++)
+        ;
+
+    // Count the length of s2
+    for (s2count = 0; s2[s2count]; s2count++)
+        ;
+
+    // Limit s2count to n if n is smaller
+    if (s2count > n) {
+        s2count = n;
+    }
+
+    // Calculate the buffer size (including space for the null terminator)
+    sizeBuffer = s1count + s2count + 1;
+
+    // Allocate memory for the new string
+    p = malloc(sizeBuffer * sizeof(char));
+    if (p == NULL) {
+        return (NULL);
+    }
+
+    // Copy s1 to the new string
+    for (i = 0; i < s1count; i++) {
+        p[i] = s1[i];
+    }
+
+    // Concatenate n characters of s2 to the new string
+    for (i = 0; i < s2count; i++) {
+        p[i + s1count] = s2[i];
+    }
+
+    // Null-terminate the new string
+    p[s1count + s2count] = '\0';
+
+    return p;
 }
+
