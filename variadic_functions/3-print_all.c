@@ -43,16 +43,15 @@ void print_string(va_list arg)
 }
 
 /**
-  * print_all - prints any argument passed into it
-  * @format: formats symbols in order
-  */
+ * print_all - prints any argument passed into it
+ * @format: formats symbols in order
+ */
 void print_all(const char * const format, ...)
 {
 	va_list args;
 	const char *p = format;
 
 	int need_separator = 0;
-
 	int i;
 
 	v_types valid_types[] = {
@@ -64,6 +63,7 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(args, format);
+
 	while (*p)
 	{
 		if (need_separator && (*p == 'c' || *p == 'i' || *p == 'f' || *p == 's'))
@@ -83,6 +83,7 @@ void print_all(const char * const format, ...)
 		}
 		p++;
 	}
+
 	va_end(args);
 	printf("\n");
 }
