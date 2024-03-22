@@ -1,81 +1,88 @@
 #include "variadic_functions.h"
 
 /**
-* print_all - A function that prints anything.
-* @format: pointer to a const char
-* @...: variable list of arguments
-* Return: sum of all arguments
-*/
-
-void print_string_with_separator(const char *s, const char *separator, int print_separator)
+ * print_char - Helper function to print a character
+ * @arg: Character argument
+ */
+void print_char(va_list arg)
 {
-    if (s)
-    {
-        printf("%s", s);
-    }
-    else
-    {
-        printf("(nil)");
-    }
-    if (print_separator)
-    {
-        printf("%s", separator);  /* Print the separator only if required */
-    }
+	printf("%c", va_arg(arg, int));        /* Print the character argument */
 }
 
-void print_all(const char *format, ...)
+/**
+ * print_int - Helper function to print an integer
+ * @arg: Integer argument
+ */
+void print_int(va_list arg)
 {
-    va_list args;
-    const char *p;
-    char c;
-    char *s;
-    int i;
-    double f;
-    const char *separator = ", ";  /* Define a default separator */
-
-    va_start(args, format);
-
-    p = format;
-    while (*p != '\0')
-    {
-        int print_separator = (*(p + 1) != '\0');
-
-        if (*p == 'c')
-        {
-            c = (char)va_arg(args, int);
-            printf("%c", c);
-            if (print_separator)
-            {
-                printf("%s", separator);
-            }
-        }
-        else if (*p == 'i')
-        {
-            i = va_arg(args, int);
-            printf("%d", i);
-            if (print_separator)
-            {
-                printf("%s", separator);
-            }
-        }
-        else if (*p == 'f')
-        {
-            f = va_arg(args, double);
-            printf("%f", f);
-            if (print_separator)
-            {
-                printf("%s", separator);
-            }
-        }
-        else if (*p == 's')
-        {
-            s = va_arg(args, char *);
-            print_string_with_separator(s, separator, print_separator);
-        }
-        p++;
-    }
-
-    va_end(args);
-    printf("\n");
+	printf("%d", va_arg(arg, int));        /* Print the integer argument */
 }
 
+/**
+ * print_float - Helper function to print a float
+ * @arg: Float argument
+ */
+void print_float(va_list arg)
+{
+	printf("%f", va_arg(arg, double));     /* Print the float argument */
+}
+
+/**
+ * print_string - Helper function to print a string
+ * @arg: String argument
+ */
+void print_string(va_list arg)
+{
+	char *str = va_arg(arg, char *);       /* Retrieve the string argument */
+
+	if (str == NULL)
+	{
+		str = "(nil)";                      /* Replace NULL pointer with (nil) */
+	}
+	printf("%s", str);                      /* Print the string */
+}
+
+/**
+  * print_all - prints any argument passed into it
+  * @format: formats symbols in order
+  */
+void print_all(const char * const format, ...)
+{
+	va_list args;
+	const char *p = format;
+
+	int need_separator = 0;
+
+	int i;
+
+	v_types valid_types[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
+	};
+
+	va_start(args, format);
+	while (*p)
+	{
+		if (need_separator && (*p == 'c' || *p == 'i' || *p == 'f' || *p == 's'))
+		{
+			printf(", ");
+		}
+		i = 0;
+		while (valid_types[i].specifier != '\0')
+		{
+			if (*p == valid_types[i].specifier)
+			{
+				valid_types[i].print_func(args);
+				need_separator = 1;
+				break;
+			}
+			i++;
+		}
+		p++;
+	}
+	va_end(args);
+	printf("\n");
+}
